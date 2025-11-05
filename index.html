@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrendyFy Mart: Premium Digital Content & Management Solutions</title>
+    <!-- Using Poppins for a clean, high-contrast, modern feel -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & BoAt Theme Variables */
+        :root {
+            --base-dark: #121212; /* Near Black */
+            --accent-red: #FF0000; /* Vibrant Red for CTAs and highlights */
+            --text-light: #EEEEEE; /* Off-White for body text */
+            --white: #FFFFFF;
+            --secondary-dark: #222222;
+            --shadow-strong: 0 10px 25px rgba(0, 0, 0, 0.4); 
+            --shadow-hover: 0 15px 35px rgba(255, 0, 0, 0.4);
+            --border-radius-lg: 12px;
+            --transition-speed: 0.35s ease-in-out;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--base-dark); /* Dark background */
+            color: var(--text-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--base-dark);
+            padding: 18px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 1.8em;
+            font-weight: 800;
+            color: var(--accent-red); /* Logo in Red */
+            margin: 0;
+        }
+        .logo span {
+            font-size: 0.6em;
+            font-weight: 400;
+            color: var(--text-light);
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: var(--base-dark);
+            padding: 100px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            text-transform: uppercase;
+        }
+        .hero p {
+            font-size: 1.3em;
+            margin-bottom: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            color: var(--text-light);
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-red);
+            color: white;
+            padding: 18px 40px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: var(--border-radius-lg);
+            font-weight: 700;
+            transition: all var(--transition-speed); 
+            box-shadow: 0 6px 15px rgba(255, 0, 0, 0.5);
+            letter-spacing: 1px;
+        }
+        .cta-button:hover {
+            background-color: #e60000;
+            transform: translateY(-4px) scale(1.03); 
+            box-shadow: 0 12px 25px rgba(255, 0, 0, 0.7);
+        }
+        
+        /* General Section Styling */
+        .section {
+            padding: 70px 0;
+            text-align: center;
+        }
+        .section.bg-secondary { background-color: var(--secondary-dark); }
+        .section h2 {
+            color: var(--accent-red);
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+        .section p.lead {
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: var(--text-light);
+            font-weight: 300;
+        }
+
+        /* Advantage Grid */
+        .advantage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px auto;
+        }
+        .advantage-card {
+            background: var(--secondary-dark);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-strong);
+            text-align: left;
+            transition: all var(--transition-speed);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .advantage-card:hover {
+            transform: scale(1.05); /* Aggressive hover like product cards */
+            box-shadow: var(--shadow-hover);
+            border: 1px solid var(--accent-red);
+        }
+        .advantage-card h3 {
+            color: var(--accent-red);
+            font-size: 1.4em;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        .advantage-card strong {
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        /* --------------------------------- */
+        /* UNIQUE SERVICE BOXES (The Product Card Grid) */
+        /* --------------------------------- */
+        .service-grid-main {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+        .service-box {
+            background-color: var(--secondary-dark);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-strong);
+            text-align: center;
+            overflow: hidden;
+            text-decoration: none;
+            display: block;
+            transition: all var(--transition-speed);
+        }
+        .service-box:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 15px 35px rgba(255, 0, 0, 0.6);
+            border: 2px solid var(--accent-red);
+        }
+        
+        .box-image-placeholder {
+            width: 100%;
+            height: 180px;
+            background-color: #333; /* Dark background for missing image */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9em;
+        }
+        .box-image { /* Style for when image is present */
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            object-position: center;
+            filter: brightness(0.7); /* Subdued filter */
+            transition: filter 0.3s ease;
+        }
+        .service-box:hover .box-image {
+             filter: brightness(1); /* Brighten on hover */
+        }
+
+        .box-content {
+            padding: 20px 15px;
+        }
+        .box-content h3 {
+            font-size: 1.2em;
+            color: var(--text-light);
+            margin-top: 0;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        .box-content p {
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        /* DEDICATED SERVICE VIEWS (The Anchor Target) */
+        .dedicated-service-view {
+            background-color: var(--secondary-dark);
+            border-top: 5px solid var(--accent-red);
+            padding: 60px 20px;
+            margin-top: 50px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-strong);
+            text-align: left;
+        }
+        .dedicated-service-view h3 {
+            font-size: 2em;
+            color: var(--accent-red);
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: center;
+        }
+        .detail-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-list ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+            color: var(--text-light);
+        }
+        .detail-list ul li:before {
+            content: '»';
+            color: var(--accent-red);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        .view-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-strong);
+            border: 2px solid var(--accent-red);
+        }
+
+        /* Launch Offer */
+        .launch-offer {
+            background-color: var(--accent-red);
+            color: var(--white);
+            padding: 80px 20px;
+            margin-top: 50px;
+        }
+        .launch-offer h2 {
+            color: var(--white);
+            font-size: 2.8em;
+            font-weight: 800;
+        }
+        .launch-offer .new-price {
+            font-size: 4em;
+            font-weight: 800;
+            color: var(--base-dark); /* Price stands out against red */
+            line-height: 1;
+        }
+        .launch-offer .old-price {
+            text-decoration: line-through;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.6em;
+            display: block;
+        }
+        .launch-offer .cta-button {
+             background-color: var(--base-dark);
+             color: var(--accent-red);
+             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+        }
+        .launch-offer .cta-button:hover {
+             background-color: #333;
+             transform: translateY(-4px) scale(1.03);
+        }
+        
+        /* Contact Section */
+        .contact-form-embed {
+            background: var(--secondary-dark);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-strong);
+        }
+        .contact-form-embed iframe {
+            width: 100%;
+            min-height: 500px;
+            border: 1px solid #333;
+            border-radius: 8px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--base-dark);
+            color: var(--text-light);
+            padding: 30px 0;
+            border-top: 2px solid var(--accent-red);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5em; }
+            .service-box, .advantage-card { width: 100%; }
+            .section { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <p class="logo">TrendyFy Mart <span>| Nexus Collab</span></p>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>PREMIUM DIGITAL FULFILLMENT. POWERED BY EXPERTS.</h1>
+            <p>We deliver high-contrast, high-impact content and management solutions that reflect the excellence of your brand.</p>
+            <a href="#contact-section" class="cta-button">Claim Your 50% Off Launch Package!</a>
+        </div>
+    </div>
+
+    <div class="section bg-secondary" id="advantage">
+        <div class="container">
+            <h2>THE TRENDYFY MART ADVANTAGE</h2>
+            <p class="lead">We blend top-tier talent with operational excellence to guarantee reliability and premium results.</p>
+            <div class="advantage-grid">
+                <div class="advantage-card">
+                    <h3>Rapid Fulfillment</h3>
+                    <p>Get your content ready in as little as <strong>24-48 hours.</strong> Avoiding delays and guaranteeing posting frequency.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Precision Quality Control</h3>
+                    <p>Every deliverable is audited by our Creative Lead. You get flawless, <strong>premium-level content</strong> guaranteed.</p>
+                </div>
+                <div class="advantage-card">
+                    <h3>Strategic Cost-Optimization</h3>
+                    <p>Access the best global talent. Enjoy <strong>up to 50% savings</strong> compared to traditional high-cost agencies.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- UNIQUE SERVICE BOXES SECTION -->
+    <div class="section" id="services">
+        <div class="container">
+            <h2>SELECT YOUR SERVICE CATEGORY</h2>
+            <p class="lead">Click on any service card below for detailed deliverables and examples.</p>
+
+            <div class="service-grid-main">
+
+                <!-- 1. Photo Editing -->
+                <a href="#view-photo-edit" class="service-box">
+                    <img src="images/service-photo-edit.jpg" alt="Photo Editing" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Photo Editing (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Photo Editing Mastery</h3>
+                        <p>High-end retouching & e-commerce preparation.</p>
+                    </div>
+                </a>
+                
+                <!-- 2. Reel/Short Video Editing -->
+                <a href="#view-reel-edit" class="service-box">
+                    <img src="images/service-reel-edit.jpg" alt="Reel Editing" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Short Video Editing (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Reels / Short Video Editing</h3>
+                        <p>High-impact, dynamic cuts for viral potential.</p>
+                    </div>
+                </a>
+
+                <!-- 3. Long Video Editing -->
+                <a href="#view-long-video" class="service-box">
+                    <img src="images/service-long-video.jpg" alt="Long Video Editing" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Long Video Editing (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Long-Form Video Editing</h3>
+                        <p>YouTube, Podcasts, and documentary post-production.</p>
+                    </div>
+                </a>
+
+                <!-- 4. Thumbnail/Graphics -->
+                <a href="#view-thumbnail" class="service-box">
+                    <img src="images/service-thumbnail.jpg" alt="Thumbnail Design" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Thumbnail Design (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Thumbnail & Graphic Design</h3>
+                        <p>High-conversion graphics for ads and CTR.</p>
+                    </div>
+                </a>
+
+                <!-- 5. Web Design / App Dev -->
+                <a href="#view-web-app" class="service-box">
+                    <img src="images/service-web-app.jpg" alt="Web App Development" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Web Design / App Dev (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Web Design / App Development</h3>
+                        <p>UI/UX-focused websites and utility app development.</p>
+                    </div>
+                </a>
+
+                <!-- 6. Management (Insta/YT) -->
+                <a href="#view-management" class="service-box">
+                    <img src="images/service-management.jpg" alt="Social Media Management" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Channel Management (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Complete Channel Management</h3>
+                        <p>Full-service Instagram, YouTube, and talent management.</p>
+                    </div>
+                </a>
+
+                <!-- 7. Brand Sponsorships -->
+                <a href="#view-sponsorship" class="service-box">
+                    <img src="images/service-sponsorship.jpg" alt="Brand Sponsorships" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Brand Sponsorships (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Brand Sponsorships & Tie-ups</h3>
+                        <p>Monetization strategy and negotiation for creators.</p>
+                    </div>
+                </a>
+
+                <!-- 8. Local Shoots -->
+                <a href="#view-local-shoot" class="service-box">
+                    <img src="images/service-local-shoot.jpg" alt="Local Shoot Coordination" class="box-image" onerror="this.outerHTML='<div class=\'box-image-placeholder\'>Local Shoot Co-ord (Placeholder)</div>'">
+                    <div class="box-content">
+                        <h3>Local Shoot Coordination</h3>
+                        <p>Full logistics and QC for on-site photography/video.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- --------------------------------- -->
+    <!-- DEDICATED SERVICE VIEWS (The Fresh View Effect - All are dark themed) -->
+    <!-- --------------------------------- -->
+    
+    <!-- VIEW 1: Photo Editing -->
+    <div class="section bg-secondary" id="view-photo-edit">
+        <div class="container dedicated-service-view">
+            <h3>Photo Editing Mastery</h3>
+            <div class="detail-grid">
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Our Creative Lead ensures every image meets global e-commerce standards with guaranteed consistency.</p>
+                    <ul>
+                        <li>★ High-end skin & object retouching.</li>
+                        <li>★ Background removal (clipping path) or replacement.</li>
+                        <li>★ Batch processing for large e-commerce catalogs.</li>
+                        <li>★ Guaranteed color correction and consistency.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Get a Photo Editing Quote</a>
+                </div>
+                <div>
+                    <img src="images/detail-photo-edit.jpg" alt="Detailed Photo Editing Example" class="view-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- VIEW 2: Reel/Short Video Editing -->
+    <div class="section" id="view-reel-edit">
+        <div class="container dedicated-service-view">
+            <h3>Reels / Short Video Editing</h3>
+            <div class="detail-grid">
+                <div>
+                    <img src="images/detail-reel-edit.jpg" alt="Detailed Reel Editing Example" class="view-image">
+                </div>
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">We create addictive, high-retention short videos perfect for Instagram, TikTok, and YouTube Shorts.</p>
+                    <ul>
+                        <li>★ Fast-paced, dynamic cinematic cuts.</li>
+                        <li>★ Trending music and sound effects integration.</li>
+                        <li>★ Automated, stylized subtitling (SRT/Burned-in).</li>
+                        <li>★ Optimized for vertical viewing and maximum engagement.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">View Launch Video Package</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Remaining Dedicated Views (Placeholder Content) -->
+    <div class="section bg-secondary" id="view-long-video">
+        <div class="container dedicated-service-view">
+            <h3>Long-Form Video Editing (YouTube & Podcast)</h3>
+            <div class="detail-grid">
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Professional post-production for your long-form content, ensuring audience retention and clarity.</p>
+                    <ul>
+                        <li>★ Multi-camera synchronization and editing.</li>
+                        <li>★ Comprehensive audio cleanup and mastering.</li>
+                        <li>★ B-roll insertion, graphics, and title card creation.</li>
+                        <li>★ Optimized for YouTube SEO and chapter markers.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Get a Long-Video Quote</a>
+                </div>
+                <div>
+                    <img src="images/detail-long-video.jpg" alt="Detailed Long Video Editing Example" class="view-image">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section" id="view-thumbnail">
+        <div class="container dedicated-service-view">
+            <h3>Thumbnail & Graphic Design</h3>
+            <div class="detail-grid">
+                 <div>
+                    <img src="images/detail-thumbnail.jpg" alt="Detailed Thumbnail Design Example" class="view-image">
+                </div>
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">High-conversion graphics designed to maximize your click-through rates (CTR) and social shares.</p>
+                    <ul>
+                        <li>★ YouTube Thumbnails engineered for maximum clicks.</li>
+                        <li>★ Instagram Story and Feed Ad Graphics.</li>
+                        <li>★ Consistent visual branding across all platforms.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Start My Graphics Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="section bg-secondary" id="view-web-app">
+        <div class="container dedicated-service-view">
+            <h3>Web Design / App Development</h3>
+            <div class="detail-grid">
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Clean, fast, and functional websites (front-end) and basic utility app development.</p>
+                    <ul>
+                        <li>★ Responsive, mobile-first design.</li>
+                        <li>★ Fast loading speeds for better SEO.</li>
+                        <li>★ UI/UX focused on conversion.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Request Web Dev Quote</a>
+                </div>
+                <div>
+                    <img src="images/detail-web-app.jpg" alt="Detailed Web Design Example" class="view-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="view-management">
+        <div class="container dedicated-service-view">
+            <h3>Complete Channel Management</h3>
+            <div class="detail-grid">
+                <div>
+                    <img src="images/detail-management.jpg" alt="Detailed Management Example" class="view-image">
+                </div>
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Full-time, expert management of your social channels, allowing you to focus purely on your core business.</p>
+                    <ul>
+                        <li>★ Content strategy planning and scheduling.</li>
+                        <li>★ Community engagement and moderation.</li>
+                        <li>★ Monthly performance reporting and optimization.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Start Full Management</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section bg-secondary" id="view-sponsorship">
+        <div class="container dedicated-service-view">
+            <h3>Brand Sponsorships & Tie-ups</h3>
+            <div class="detail-grid">
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Monetization strategy and outreach to connect creators with relevant, high-paying brand opportunities.</p>
+                    <ul>
+                        <li>★ Vetting potential brand partners.</li>
+                        <li>★ Negotiating rates and contract terms.</li>
+                        <li>★ Complete campaign management.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Discuss Monetization</a>
+                </div>
+                <div>
+                    <img src="images/detail-sponsorship.jpg" alt="Detailed Sponsorship Example" class="view-image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="view-local-shoot">
+        <div class="container dedicated-service-view">
+            <h3>Local Shoot Coordination</h3>
+            <div class="detail-grid">
+                <div>
+                    <img src="images/detail-local-shoot.jpg" alt="Detailed Local Shoot Example" class="view-image">
+                </div>
+                <div class="detail-list">
+                    <p class="lead" style="color: var(--text-light);">Hassle-free management of local shoots: We handle the talent, equipment, location, and post-production QC.</p>
+                    <ul>
+                        <li>★ Sourcing and vetting local camera operators.</li>
+                        <li>★ Logistics planning and scheduling.</li>
+                        <li>★ Immediate transfer to our editing team.</li>
+                    </ul>
+                    <a href="#launch-offer" class="cta-button" style="margin-top: 20px;">Book Your Local Shoot</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- LAUNCH OFFER & CONTACT -->
+    <div class="launch-offer" id="launch-offer">
+        <div class="container">
+            <h2>EXCLUSIVE LAUNCH PACKAGE: GET STARTED NOW!</h2>
+            <p style="font-size: 1.1em; font-weight: 600;">Limited spots available. Get premium service at 50% OFF to jumpstart your brand's content pipeline.</p>
+            <div class="price-details">
+                <span class="old-price">Standard Value: ₹15,000</span>
+                <span class="new-price">Only ₹7,500</span>
+            </div>
+            <p style="font-size: 1.1em; font-weight: 600; color: var(--base-dark);">Includes 15 Edited Photos, 5 Ready-to-Post Videos, and a FREE Strategy Call.</p>
+            <a href="#contact-section" class="cta-button">Lock In Your Discount Now!</a>
+        </div>
+    </div>
+
+    <div class="section bg-secondary" id="contact-section">
+        <div class="container">
+            <h2>START YOUR PROJECT TODAY</h2>
+            <p class="lead">Fill out our quick form. We prioritize rapid response and will contact you within **4 business hours**.</p>
+            
+            <div class="contact-form-embed">
+                <!-- *** REPLACE THIS GOOGLE FORM LINK WITH YOUR EMBED CODE'S SRC LINK *** -->
+                <iframe src="YOUR_EMBEDDED_GOOGLE_FORM_LINK_HERE" 
+                        width="100%" height="550" frameborder="0" marginheight="0" marginwidth="0">
+                        Loading contact form...
+                </iframe>
+            </div>
+            
+            <p style="font-size: 1.1em; font-weight: 600;">
+                **Direct Contact:** Email: <a href="mailto:contact@[YOUR_PROFESSIONAL_EMAIL]" style="color:var(--accent-red); transition: color 0.2s;">[YOUR_PROFESSIONAL_EMAIL]</a> | WhatsApp/Phone: <a href="tel:[YOUR_BUSINESS_PHONE_NUMBER]" style="color:var(--accent-red); transition: color 0.2s;">[YOUR_BUSINESS_PHONE_NUMBER]</a>
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 TrendyFy Mart | Powered by Nexus Collab. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
