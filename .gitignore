@@ -1,22 +1,8 @@
-# Recommended files to ignore for static sites and design work
-
-# OS generated files
-.DS_Store
-Thumbs.db
-
-# Node/npm files (if you ever use JavaScript tools)
-/node_modules
-
-# Project/Build directories
-/temp
-/build
-
-# Design/Source Files (Keep these offline, as they are large)
+# Ignore large design source files
 *.psd
 *.ai
 *.sketch
-*.xd
 
-# Local Configuration
-.env
-.local
+# Ignore temporary/config files
+.DS_Store
+/node_modules
